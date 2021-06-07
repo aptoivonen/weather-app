@@ -3,6 +3,7 @@ const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgeCssPlugin = require("purgecss-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -61,6 +62,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new Dotenv(),
   ],
 
   devtool: isProduction ? "source-map" : "inline-source-map",
