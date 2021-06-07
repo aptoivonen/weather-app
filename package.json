@@ -1,0 +1,21 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Fetch weather data from openweathermap.org's api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aptoivonen/weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aptoivonen/weather-app/issues"
+  },
+  "homepage": "https://github.com/aptoivonen/weather-app#readme"
+}
