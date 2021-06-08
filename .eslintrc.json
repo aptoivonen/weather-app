@@ -8,6 +8,11 @@
     "prettier/prettier": "error",
     "no-console": "off",
     "class-methods-use-this": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-new": "off",
+    "no-underscore-dangle": "off"
+  },
+  "env": {
+    "browser": true
   }
 }
