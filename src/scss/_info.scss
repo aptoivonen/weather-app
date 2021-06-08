@@ -1,0 +1,25 @@
+.info {
+  margin-top: 1rem;
+
+  &-city {
+    font-size: 2rem;
+  }
+
+  &-weather-condition {
+    display: flex;
+    align-items: center;
+  }
+
+  &-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &-title {
+    font-size: 1.5rem;
+  }
+
+  &-temperature {
+    font-size: 2rem;
+  }
+}
