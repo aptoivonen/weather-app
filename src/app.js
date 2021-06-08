@@ -1,3 +1,4 @@
 import "./scss/style.scss";
+import WeatherApp from "./js/weatherapp";
 
-console.log("hei");
+new WeatherApp();
