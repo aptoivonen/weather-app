@@ -57,7 +57,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new PurgeCssPlugin({
-      paths: glob.sync(`${PATHS.src}/*.html`, { nodir: true }),
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
