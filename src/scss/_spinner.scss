@@ -1,0 +1,26 @@
+.info-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.spinner {
+  --width: 6rem;
+  --height: var(--width);
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  animation: spin 1s linear infinite;
+  background: url("data:image/svg+xml,%3Csvg enable-background='new 0 0 497 497' height='512' viewBox='0 0 497 497' width='512' xmlns='http://www.w3.org/2000/svg' %3E%3Cg%3E%3Ccircle cx='98' cy='376' fill='%23909ba6' r='53' /%3E%3Ccircle cx='439' cy='336' fill='%23c8d2dc' r='46' /%3E%3Ccircle cx='397' cy='112' fill='%23e9edf1' r='38' /%3E%3Cellipse cx='56.245' cy='244.754' fill='%237e8b96' rx='56.245' ry='54.874' /%3E%3Cellipse cx='217.821' cy='447.175' fill='%23a2abb8' rx='51.132' ry='49.825' /%3E%3Cellipse cx='349.229' cy='427.873' fill='%23b9c3cd' rx='48.575' ry='47.297' /%3E%3Cellipse cx='117.092' cy='114.794' fill='%235f6c75' rx='58.801' ry='57.397' /%3E%3Cellipse cx='453.538' cy='216.477' fill='%23dce6eb' rx='43.462' ry='42.656' /%3E%3Ccircle cx='263' cy='62' fill='%234e5a61' r='62' /%3E%3C/g%3E%3C/svg%3E")
+    center / var(--width) var(--height) no-repeat;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

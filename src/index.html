@@ -17,20 +17,28 @@
           <span class="unit-fahrenheit">F°</span>
         </button>
       </div>
-      <div class="info">
-        <span class="info-city" id="info-city"></span>
-        <div class="info-weather-condition">
-          <img src="" alt="" class="info-icon" id="info-icon" />
-          <span class="info-title" id="info-title"></span>
+      <div class="panels">
+        <div class="panel info hide show">
+          <span class="info-city" id="info-city"></span>
+          <div class="info-weather-condition">
+            <img src="" alt="" class="info-icon" id="info-icon" />
+            <span class="info-title" id="info-title"></span>
+          </div>
+          <span class="info-temperature" id="info-temperature"></span>
+          <div class="info-humidity">
+            <small class="info-humidity-text">Humidity: </small
+            ><small
+              class="info-humidity-value"
+              id="info-humidity-value"
+            ></small>
+          </div>
         </div>
-        <span class="info-temperature" id="info-temperature"></span>
-        <div class="info-humidity">
-          <small class="info-humidity-text">Humidity: </small
-          ><small class="info-humidity-value" id="info-humidity-value"></small>
+        <div class="panel no-info hide">
+          <span class="no-info-text">No weather data</span>
         </div>
-      </div>
-      <div class="no-info">
-        <span class="no-info-text">No weather data</span>
+        <div class="panel info-spinner hide">
+          <i class="spinner"></i>
+        </div>
       </div>
     </section>
   </body>

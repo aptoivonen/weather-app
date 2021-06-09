@@ -1,5 +1,6 @@
 import getWeather from "./weatherapi";
 import { getTemperaturePrefix, getUnitPostfix } from "./weatherutils";
+import { show } from "./domutils";
 
 const DEFAULT_UNIT = "celsius";
 
@@ -12,9 +13,14 @@ class WeatherApp {
     this.$title = document.getElementById("info-title");
     this.$temperature = document.getElementById("info-temperature");
     this.$humidity = document.getElementById("info-humidity-value");
+
     this.units = DEFAULT_UNIT;
-    this.weatherData = {};
+    this.weatherData = null;
+    this.loading = false;
+
     this._bind();
+
+    this.render();
   }
 
   _bind() {
@@ -34,11 +40,15 @@ class WeatherApp {
       return;
     }
     try {
-      this.weatherData = await getWeather(cityName, this.units);
+      this.loading = true;
       this.render();
+      this.weatherData = await getWeather(cityName, this.units);
     } catch (err) {
-      this.weatherData = {};
+      this.weatherData = null;
       console.log(err);
+    } finally {
+      this.loading = false;
+      this.render();
     }
   }
 
@@ -50,6 +60,18 @@ class WeatherApp {
   render() {
     this.$unitButton.classList.remove("celsius", "fahrenheit");
     this.$unitButton.classList.add(this.units);
+
+    if (this.loading) {
+      show(".info-spinner");
+      return;
+    }
+
+    if (!this.weatherData) {
+      show(".no-info");
+      return;
+    }
+
+    show(".info");
     const { name, country, temp, humidity, title, description, iconUrl } =
       this.weatherData;
     this.$city.textContent = `${name}, ${country}`;
@@ -58,7 +80,7 @@ class WeatherApp {
     this.$title.textContent = title;
     const tempPrefix = getTemperaturePrefix(temp);
     const tempPostfix = getUnitPostfix(this.units);
-    this.$temperature.textContent = `${tempPrefix}${temp} ${tempPostfix}`;
+    this.$temperature.textContent = `${tempPrefix} ${temp} ${tempPostfix}`;
     this.$humidity.textContent = `${humidity} %`;
   }
 }

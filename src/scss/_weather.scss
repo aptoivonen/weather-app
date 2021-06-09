@@ -1,7 +1,18 @@
 .weather {
+  display: flex;
+  flex-direction: column;
   width: 400px;
   height: 300px;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.panels {
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.panel {
+  height: 100%;
 }

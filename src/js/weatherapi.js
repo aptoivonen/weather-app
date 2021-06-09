@@ -24,7 +24,7 @@ async function getWeather(cityName, temperatureUnit) {
   return {
     name,
     country,
-    temp,
+    temp: Math.round(temp),
     humidity,
     title: main,
     description,
