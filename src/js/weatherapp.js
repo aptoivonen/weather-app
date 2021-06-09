@@ -57,6 +57,11 @@ class WeatherApp {
     this._handleWeather();
   }
 
+  loadCity(cityName) {
+    this.$form.elements["city-name-input"].value = cityName;
+    this._handleWeather();
+  }
+
   render() {
     this.$unitButton.classList.remove("celsius", "fahrenheit");
     this.$unitButton.classList.add(this.units);
