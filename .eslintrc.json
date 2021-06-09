@@ -5,7 +5,12 @@
     "ecmaVersion": 2021
   },
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "no-console": "off",
     "class-methods-use-this": "off",
     "import/no-extraneous-dependencies": "off",
