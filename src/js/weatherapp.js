@@ -1,4 +1,5 @@
 import getWeather from "./weatherapi";
+import { getTemperaturePrefix, getUnitPostfix } from "./weatherutils";
 
 const DEFAULT_UNIT = "celsius";
 
@@ -46,14 +47,6 @@ class WeatherApp {
     this._handleWeather();
   }
 
-  _getUnitPostfix() {
-    return this.units === "celsius" ? "°C" : "°F";
-  }
-
-  _getTemperaturePrefix(temp) {
-    return temp < 0 ? "-" : "+";
-  }
-
   render() {
     this.$unitButton.classList.remove("celsius", "fahrenheit");
     this.$unitButton.classList.add(this.units);
@@ -63,8 +56,8 @@ class WeatherApp {
     this.$icon.src = iconUrl;
     this.$icon.alt = description;
     this.$title.textContent = title;
-    const tempPrefix = this._getTemperaturePrefix(temp);
-    const tempPostfix = this._getUnitPostfix();
+    const tempPrefix = getTemperaturePrefix(temp);
+    const tempPostfix = getUnitPostfix(this.units);
     this.$temperature.textContent = `${tempPrefix}${temp} ${tempPostfix}`;
     this.$humidity.textContent = `${humidity} %`;
   }
