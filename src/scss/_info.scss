@@ -1,6 +1,4 @@
 .info {
-  margin-top: 1rem;
-
   &-city {
     font-size: 2rem;
   }
@@ -13,6 +11,7 @@
   &-icon {
     width: 5rem;
     height: 5rem;
+    margin-left: -1.3rem;
   }
 
   &-title {
