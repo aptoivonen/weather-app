@@ -3,9 +3,11 @@
   flex-direction: column;
   width: 400px;
   height: 300px;
+  margin-top: 3rem;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, rgb(0, 90, 167), rgb(255, 253, 228));
 }
 
 .panels {
